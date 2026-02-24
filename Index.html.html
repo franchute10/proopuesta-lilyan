@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dra. Lilyan Castro - Ginecología y Obstetricia</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6B2D5C",
+                        "primary-dark": "#4a1e3f",
+                        "primary-soft": "#FDF4FB",
+                        "accent-pink": "#FCE7F3",
+                    },
+                    fontFamily: { "display": ["Manrope", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .btn-premium {
+            @apply flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-primary px-8 text-[17px] font-extrabold text-white shadow-lg transition-all hover:bg-primary-dark hover:-translate-y-0.5 active:scale-[0.98];
+        }
+        .card-shadow { @apply shadow-[0_8px_30px_rgb(0,0,0,0.04)]; }
+    </style>
+</head>
+<body class="bg-white font-display antialiased text-slate-900">
+
+    <header class="sticky top-0 z-50 flex items-center justify-between bg-white/90 backdrop-blur-md px-6 py-4 border-b border-primary/10">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">local_hospital</span>
+            <h1 class="text-lg font-bold">Dra. Lilyan Castro</h1>
+        </div>
+        <button onclick="openModal()" class="rounded-full bg-primary px-6 py-2 text-sm font-extrabold text-white hover:bg-primary-dark transition-colors">Agendar</button>
+    </header>
+
+    <main>
+        <section class="max-w-7xl mx-auto px-6 py-16 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 flex flex-col gap-6">
+                <span class="w-fit rounded-full bg-primary/10 px-4 py-1 text-xs font-bold uppercase text-primary tracking-widest">Ginecóloga Obstetra</span>
+                <h2 class="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">Cuidado integral para <span class="text-primary">tu salud femenina</span>.</h2>
+                <p class="text-xl text-slate-600 font-medium">Atención ginecológica privada en Surco con acompañamiento cercano, profesional y personalizado.</p>
+                <button onclick="openModal()" class="btn-premium sm:w-fit">Agendar consulta ahora</button>
+            </div>
+            <div class="lg:w-1/2">
+                <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+                    <img class="h-full w-full object-cover" src="https://i.imgur.com/RSEUXan.png" alt="Dra. Lilyan Castro">
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-accent-pink/40 py-12 border-y border-pink-100">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col items-center text-center">
+                <span class="text-6xl font-black text-primary mb-2">18+</span>
+                <p class="text-lg font-bold text-slate-700">Años de experiencia médica brindando confianza y seguridad.</p>
+            </div>
+        </section>
+
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-2 uppercase tracking-tighter text-primary">Testimonios</h2>
+                    <p class="text-slate-500 italic">Lo que nuestras pacientes dicen de su experiencia.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl card-shadow border border-slate-50">
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 italic">"Excelente profesional. La Dra. Lilyan me acompañó durante todo mi embarazo con una paciencia increíble. Me sentí segura y cuidada en cada cita."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">MA</div>
+                            <span class="font-bold">María Alvarado</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl card-shadow border border-slate-50">
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 italic">"Llevo años atendiéndome con ella para mis chequeos anuales. Su trato es muy humano y siempre se toma el tiempo de explicar todo detalladamente."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">CR</div>
+                            <span class="font-bold">Carla Rodríguez</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl card-shadow border border-slate-50">
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+                        </div>
+                        <p class="text-slate-600 mb-6 italic">"Gracias a su asesoría en planificación familiar pude tomar la mejor decisión para mi salud. Muy recomendada por su profesionalismo y calidez."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">SP</div>
+                            <span class="font-bold">Sofía Pineda</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-primary-soft py-20 px-6">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <span class="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Ubicación</span>
+                    <h2 class="text-4xl font-bold mb-8 uppercase tracking-tighter text-slate-900">Visítanos en Surco</h2>
+                    <div class="bg-white p-8 rounded-3xl card-shadow flex flex-col gap-8">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-primary p-2 bg-primary/5 rounded-lg">location_on</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Consultorio Privado</h4>
+                                <p class="text-slate-500">Av. Caminos del Inca 244 – Of. 205</p>
+                                <p class="text-slate-500 text-sm">Santiago de Surco, Lima</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-primary p-2 bg-primary/5 rounded-lg">schedule</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Horarios de Atención</h4>
+                                <p class="text-slate-500">Lun - Vie: 9:00 am - 7:00 pm</p>
+                                <p class="text-slate-500 text-sm">Sáb: 9:00 am - 1:00 pm</p>
+                            </div>
+                        </div>
+                        <a href="https://maps.app.goo.gl/DFJvUbdBVz5xkDzm6" target="_blank" class="flex items-center justify-center gap-2 text-primary font-bold hover:underline py-2">
+                            Ver en Google Maps <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full aspect-video lg:aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white">
+                    <img class="h-full w-full object-cover" src="https://i.imgur.com/m8N4Gn4.png" alt="Mapa Ubicación Surco">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 bg-white flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-8">
+                <span class="material-symbols-outlined text-primary text-3xl">favorite</span>
+            </div>
+            <h2 class="text-4xl font-bold text-slate-900 mb-4 tracking-tight">Tu salud en manos expertas</h2>
+            <p class="text-lg text-slate-500 mb-10 max-w-lg">Agenda tu consulta hoy y recibe la atención personalizada que mereces.</p>
+            <button onclick="openModal()" class="btn-premium max-w-xs group">
+                <span>Agendar consulta</span>
+                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </button>
+        </section>
+    </main>
+
+    <footer class="py-12 border-t border-slate-100 bg-white flex flex-col items-center gap-6">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary">local_hospital</span>
+            </div>
+            <span class="text-xl font-bold text-slate-900 tracking-tight">Dra. Lilyan Castro</span>
+        </div>
+        <p class="text-sm text-slate-400">© 2024 Dra. Lilyan Castro. Todos los derechos reservados.</p>
+        <a href="https://www.facebook.com/lilyan.castro.rubio.2025" target="_blank" class="text-slate-400 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+        </a>
+    </footer>
+
+    <div id="modal-agendar" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden">
+            <div class="p-6 border-b flex justify-between items-center bg-primary-soft">
+                <h3 class="text-xl font-bold text-primary">Reserva tu Cita</h3>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <form id="form-cita" class="p-8 flex flex-col gap-4">
+                <p class="text-sm text-slate-500 mb-2">Ingresa tus datos para continuar con la elección de tu horario en Calendly.</p>
+                <input type="text" placeholder="Nombre completo" class="w-full rounded-xl border-slate-200 p-3 focus:ring-primary focus:border-primary" required>
+                <input type="tel" placeholder="Número de WhatsApp" class="w-full rounded-xl border-slate-200 p-3 focus:ring-primary focus:border-primary" required>
+                <select class="w-full rounded-xl border-slate-200 p-3 focus:ring-primary focus:border-primary">
+                    <option>Sede: Surco (Consultorio 205)</option>
+                    <option>Sede: Lince</option>
+                    <option>Sede: Chiclayo</option>
+                </select>
+                <button type="submit" class="btn-premium mt-4">Continuar a Calendly</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal-agendar');
+        function openModal() { modal.classList.remove('hidden'); modal.classList.add('flex'); }
+        function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); }
+        window.onclick = function(e) { if (e.target == modal) closeModal(); }
+
+        document.getElementById('form-cita').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = "https://calendly.com/franchute10/consulta-ginecologica-surco";
+        });
+    </script>
+</body>
+</html>
