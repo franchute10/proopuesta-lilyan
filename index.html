@@ -240,7 +240,7 @@ form.addEventListener('submit', function(e) {
         body: JSON.stringify(formData)
     }).then(() => {
         // 2. GENERAMOS EL MENSAJE DINÁMICO PARA WHATSAPP
-        [cite_start]const nroDoctora = "51959418071"; // El número de la Dra. Lilyan [cite: 55]
+        [cite_start]const nroDoctora = "51924200094"; // El número de la Dra. Lilyan [cite: 55]
         const mensaje = `Hola Dra. Lilyan! Soy ${nombre}. Vengo de su web y me gustaría agendar una cita para la sede de ${sede}. Mi WhatsApp es ${whatsapp}.`;
         const waLink = `https://wa.me/${nroDoctora}?text=${encodeURIComponent(mensaje)}`;
 
@@ -254,4 +254,5 @@ form.addEventListener('submit', function(e) {
     </script>
 </body>
 </html>
+
 
