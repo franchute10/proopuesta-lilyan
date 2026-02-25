@@ -253,7 +253,7 @@
             body: JSON.stringify(formData)
         }).then(() => {
             // 2. Redirigimos a WhatsApp con tu número para la prueba
-            const nroDoctora = "51XXXXXXXXX"; // PON AQUÍ TU NÚMERO PARA EL TEST
+            const nroDoctora = "51924200094"; // PON AQUÍ TU NÚMERO PARA EL TEST
             const mensaje = `Hola Dra. Lilyan! Soy ${nombre}. Vengo de su web y me gustaría agendar una cita para la sede de ${sede}. Mi WhatsApp es ${whatsapp}.`;
             const waLink = `https://wa.me/${nroDoctora}?text=${encodeURIComponent(mensaje)}`;
 
@@ -267,6 +267,7 @@
 </script>
 </body>
 </html>
+
 
 
 
