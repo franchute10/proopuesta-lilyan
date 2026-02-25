@@ -32,6 +32,11 @@
         .card-shadow { @apply shadow-[0_8px_30px_rgb(0,0,0,0.04)]; }
         video { @apply rounded-2xl shadow-md bg-black w-full object-cover aspect-[9/16]; }
         html { scroll-behavior: smooth; }
+        
+        /* Efecto Zoom In solicitado */
+        .img-zoom-container { @apply overflow-hidden rounded-[2rem] border-8 border-white shadow-2xl; }
+        .img-zoom-container img { @apply transition-transform duration-700 ease-in-out; }
+        .img-zoom-container:hover img { @apply scale-110; }
     </style>
 </head>
 <body class="bg-white font-display antialiased text-slate-900">
@@ -47,7 +52,7 @@
     <main>
         <section class="max-w-7xl mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row items-center gap-12">
             <div class="lg:w-1/2 flex flex-col gap-6 text-left">
-                <div class="w-full max-w-[420px]">
+                <div class="w-full max-w-[485px]">
                     <img src="https://i.imgur.com/aeNvNBz.png" alt="Logo Dra. Lilyan Castro" class="w-full h-auto object-contain">
                 </div>
                 
@@ -61,7 +66,7 @@
                 </div>
             </div>
             <div class="lg:w-1/2">
-                <div class="aspect-[1/1] rounded-[2rem] overflow-hidden shadow-2xl relative border-8 border-white">
+                <div class="img-zoom-container aspect-[1/1] relative">
                     <img class="h-full w-full object-cover" src="https://i.imgur.com/bv4zpi6.png" alt="Dra. Lilyan Castro">
                 </div>
             </div>
@@ -77,17 +82,17 @@
                     <div class="flex flex-col gap-4 rounded-2xl border border-slate-100 p-6 shadow-sm">
                         <span class="material-symbols-outlined text-primary text-3xl">child_care</span>
                         <h3 class="text-xl font-bold">Control Prenatal</h3>
-                        <p class="text-sm text-slate-500 leading-relaxed">Acompañamiento en cada etapa. Te ayudo a manejar las molestias, incluso bajo el intenso sol del verano limeño.</p>
+                        <p class="text-sm text-slate-500 leading-relaxed">Acompañamiento cercano. Te ayudo a manejar las molestias, incluso bajo el sol del verano limeño.</p>
                     </div>
                     <div class="flex flex-col gap-4 rounded-2xl border border-slate-100 p-6 shadow-sm">
                         <span class="material-symbols-outlined text-primary text-3xl">medical_services</span>
                         <h3 class="text-xl font-bold">Chequeo Ginecológico</h3>
-                        <p class="text-sm text-slate-500 leading-relaxed">Tecnología moderna y un trato que elimina el miedo al chequeo. Diagnósticos claros donde tú eres la prioridad.</p>
+                        <p class="text-sm text-slate-500 leading-relaxed">Tecnología moderna y un trato que elimina el miedo al chequeo. Diagnósticos claros y humanos.</p>
                     </div>
                     <div class="flex flex-col gap-4 rounded-2xl border border-slate-100 p-6 shadow-sm">
                         <span class="material-symbols-outlined text-primary text-3xl">family_restroom</span>
                         <h3 class="text-xl font-bold">Planificación Familiar</h3>
-                        <p class="text-sm text-slate-500 leading-relaxed">Asesoría experta sin juicios. Decisiones informadas para tus metas de vida, adaptadas a tu realidad actual.</p>
+                        <p class="text-sm text-slate-500 leading-relaxed">Asesoría experta sin juicios. Decisiones informadas para tus metas de vida y tranquilidad.</p>
                     </div>
                 </div>
             </div>
@@ -117,20 +122,54 @@
                     <h2 class="text-3xl font-bold text-primary uppercase tracking-tighter">Preguntas Frecuentes</h2>
                     <p class="text-slate-500 mt-2">Resolvemos tus dudas sobre la atención y tu salud.</p>
                 </div>
+                
                 <div class="space-y-4">
-                    <details class="group rounded-xl border border-slate-100 bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden">
+                    <details class="group rounded-xl border border-slate-100 bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden" open>
                         <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-slate-900">
                             <h3 class="text-lg font-bold">¿Cómo es el trato en la consulta?</h3>
                             <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
                         </summary>
-                        <p class="mt-4 leading-relaxed text-slate-600">Mi enfoque es de "amiga experta". Olvídate de la frialdad de las grandes clínicas; aquí te explicaré todo de forma clara, sin tecnicismos complejos y en un ambiente de total confianza.</p>
+                        <p class="mt-4 leading-relaxed text-slate-600">Mi enfoque es de "amiga experta". Olvídate de la frialdad de las grandes clínicas; aquí te explicaré todo de forma clara, sin tecnicismos complejos y en un ambiente de total confianza[cite: 13].</p>
                     </details>
+
                     <details class="group rounded-xl border border-slate-100 bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden">
                         <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-slate-900">
                             <h3 class="text-lg font-bold">¿Es realmente necesario tanto control en el embarazo?</h3>
                             <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
                         </summary>
-                        <p class="mt-4 leading-relaxed text-slate-600">¡Absolutamente! El control prenatal no es solo para ver al bebé, sino para asegurar tu paz mental y actuar preventivamente para que vivas un embarazo tranquilo.</p>
+                        <p class="mt-4 leading-relaxed text-slate-600">¡Absolutamente! El control prenatal no es solo para ver al bebé, sino para asegurar tu paz mental y actuar preventivamente para que vivas un embarazo tranquilo[cite: 48].</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-100 bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-slate-900">
+                            <h3 class="text-lg font-bold">¿Es difícil llegar a los consultorios con el tráfico de Lima?</h3>
+                            <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+                        </summary>
+                        <p class="mt-4 leading-relaxed text-slate-600">He elegido sedes estratégicas en Surco y Lince para que el traslado sea lo más fluido posible. Queremos que llegues a tu cita relajada y sin el estrés logístico de la ciudad[cite: 36, 54].</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-100 bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-slate-900">
+                            <h3 class="text-lg font-bold">¿Cómo me preparo para el día del parto?</h3>
+                            <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+                        </summary>
+                        <p class="mt-4 leading-relaxed text-slate-600">Lo haremos juntas. En nuestras citas diseñaremos un plan personalizado para que llegues a ese momento informada y segura. Mi objetivo es que te sientas cuidada en todo momento[cite: 50].</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-100 bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-slate-900">
+                            <h3 class="text-lg font-bold">¿Qué pasa si tengo una duda urgente después de la cita?</h3>
+                            <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+                        </summary>
+                        <p class="mt-4 leading-relaxed text-slate-600">Mi acompañamiento no termina al salir del consultorio. Mantengo un canal abierto de comunicación para asegurar esa continuidad emocional que tanto valoramos[cite: 5].</p>
+                    </details>
+
+                    <details class="group rounded-xl border border-slate-100 bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-slate-900">
+                            <h3 class="text-lg font-bold">¿Debo hacerme chequeos si no tengo molestias?</h3>
+                            <span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+                        </summary>
+                        <p class="mt-4 leading-relaxed text-slate-600">Sí, la prevención es nuestro mejor aliado. Un chequeo anual preventivo es la mejor inversión que puedes hacer en tu bienestar a largo plazo[cite: 49].</p>
                     </details>
                 </div>
             </div>
@@ -146,19 +185,19 @@
                         <span class="material-symbols-outlined text-primary text-3xl mb-4">location_on</span>
                         <h3 class="font-bold mb-2">Surco</h3>
                         <p class="text-sm text-slate-600 mb-4">Cl. Caminos del Inca 244 - Ofic 205</p>
-                        <a href="https://maps.app.goo.gl/aXu8sbaNRydvs2L57" target="_blank" class="text-primary text-xs font-bold hover:underline">Ver Mapa</a>
+                        <a href="#" class="text-primary text-xs font-bold hover:underline">Ver Mapa</a>
                     </div>
                     <div class="bg-white p-8 rounded-3xl border border-slate-100 flex flex-col items-center">
                         <span class="material-symbols-outlined text-primary text-3xl mb-4">location_on</span>
                         <h3 class="font-bold mb-2">Lince</h3>
                         <p class="text-sm text-slate-600 mb-4">Jr. Inca Garcilaso de la Vega 1799</p>
-                        <a href="https://maps.app.goo.gl/rW6mVjR2KS2MRka9A" target="_blank" class="text-primary text-xs font-bold hover:underline">Ver Mapa</a>
+                        <a href="#" class="text-primary text-xs font-bold hover:underline">Ver Mapa</a>
                     </div>
                     <div class="bg-white p-8 rounded-3xl border border-slate-100 flex flex-col items-center">
                         <span class="material-symbols-outlined text-primary text-3xl mb-4">location_on</span>
                         <h3 class="font-bold mb-2">Chiclayo</h3>
                         <p class="text-sm text-slate-600 mb-4">Jr. Union 211 - Urb San Eduardo</p>
-                        <a href="https://maps.app.goo.gl/22HmhHLpxFWFV15K6" target="_blank" class="text-primary text-xs font-bold hover:underline">Ver Mapa</a>
+                        <a href="#" class="text-primary text-xs font-bold hover:underline">Ver Mapa</a>
                     </div>
                 </div>
             </div>
@@ -182,7 +221,7 @@
             <span class="material-symbols-outlined text-primary">local_hospital</span>
             <span class="text-xl font-bold text-slate-900">Dra. Lilyan Castro</span>
         </div>
-        <p class="text-sm text-slate-400">© 2024 Dra. Lilyan Castro. Todos los derechos reservados.</p>
+        <p class="text-sm text-slate-400">© 2026 Dra. Lilyan Castro. Todos los derechos reservados.</p>
     </footer>
 
     <div id="modal-agendar" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
@@ -206,68 +245,42 @@
         </div>
     </div>
 
-<script>
-    const modal = document.getElementById('modal-agendar');
-    const form = document.getElementById('form-cita');
-    const btnSubmit = document.getElementById('btn-submit');
-    const btnText = document.getElementById('btn-text');
-    
-    // URL DE TU SCRIPT DE GOOGLE
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDl6hPv6XkOJntcWdo_tt2Fo3laMiFLA5nyelXCxhf_ZoAdnpN6CVeBjpu6yVeooS0/exec';
-
-    // Funciones para abrir/cerrar modal
-    function openModal() { 
-        if(modal) {
-            modal.classList.remove('hidden'); 
-            modal.classList.add('flex'); 
-        }
-    }
-    
-    function closeModal() { 
-        if(modal) {
-            modal.classList.add('hidden'); 
-            modal.classList.remove('flex'); 
-        }
-    }
-
-    window.onclick = function(e) { if (e.target == modal) closeModal(); }
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+    <script>
+        const modal = document.getElementById('modal-agendar');
+        const form = document.getElementById('form-cita');
+        const btnSubmit = document.getElementById('btn-submit');
+        const btnText = document.getElementById('btn-text');
         
-        btnSubmit.disabled = true;
-        btnText.innerText = "Conectando con la Dra...";
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDl6hPv6XkOJntcWdo_tt2Fo3laMiFLA5nyelXCxhf_ZoAdnpN6CVeBjpu6yVeooS0/exec';
 
-        const nombre = document.getElementById('nombre').value;
-        const whatsapp = document.getElementById('whatsapp').value;
-        const sede = document.getElementById('sede').value;
+        function openModal() { modal.classList.remove('hidden'); modal.classList.add('flex'); }
+        function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); }
+        window.onclick = function(e) { if (e.target == modal) closeModal(); }
 
-        const formData = { nombre, whatsapp, sede };
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            btnSubmit.disabled = true;
+            btnText.innerText = "Guardando datos...";
 
-        // 1. Guardamos en Google Sheets
-        fetch(GOOGLE_SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            cache: 'no-cache',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        }).then(() => {
-            // 2. Redirigimos a WhatsApp con tu número para la prueba
-            const nroDoctora = "51924200094"; // PON AQUÍ TU NÚMERO PARA EL TEST
-            const mensaje = `Hola Dra. Lilyan! Soy ${nombre}. Vengo de su web y me gustaría agendar una cita para la sede de ${sede}. Mi WhatsApp es ${whatsapp}.`;
-            const waLink = `https://wa.me/${nroDoctora}?text=${encodeURIComponent(mensaje)}`;
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                sede: document.getElementById('sede').value
+            };
 
-            window.location.href = waLink;
-        }).catch(error => {
-            console.error('Error:', error);
-            // Si falla el guardado, igual mandamos a WhatsApp para no perder el lead
-            window.location.href = "https://wa.me/51XXXXXXXXX"; 
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                cache: 'no-cache',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            }).then(() => {
+                // REDIRECCIÓN A CALENDLY: Para que la automatización funcione con Make.com
+                window.location.href = "https://calendly.com/franchute10/consulta-ginecologica-surco";
+            }).catch(error => {
+                window.location.href = "https://calendly.com/franchute10/consulta-ginecologica-surco";
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
-
-
-
-
