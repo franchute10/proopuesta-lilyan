@@ -206,53 +206,67 @@
         </div>
     </div>
 
-    <script>
-        const modal = document.getElementById('modal-agendar');
-        const form = document.getElementById('form-cita');
-        const btnSubmit = document.getElementById('btn-submit');
-        const btnText = document.getElementById('btn-text');
-        
-        // URL DE TU SCRIPT DE GOOGLE
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDl6hPv6XkOJntcWdo_tt2Fo3laMiFLA5nyelXCxhf_ZoAdnpN6CVeBjpu6yVeooS0/exec';
-
-        function openModal() { modal.classList.remove('hidden'); modal.classList.add('flex'); }
-        function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); }
-        window.onclick = function(e) { if (e.target == modal) closeModal(); }
-
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
+<script>
+    const modal = document.getElementById('modal-agendar');
+    const form = document.getElementById('form-cita');
+    const btnSubmit = document.getElementById('btn-submit');
+    const btnText = document.getElementById('btn-text');
     
-    btnSubmit.disabled = true;
-    btnText.innerText = "Conectando con la Dra...";
+    // URL DE TU SCRIPT DE GOOGLE
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDl6hPv6XkOJntcWdo_tt2Fo3laMiFLA5nyelXCxhf_ZoAdnpN6CVeBjpu6yVeooS0/exec';
 
-    const nombre = document.getElementById('nombre').value;
-    const whatsapp = document.getElementById('whatsapp').value;
-    const sede = document.getElementById('sede').value;
+    // Funciones para abrir/cerrar modal
+    function openModal() { 
+        if(modal) {
+            modal.classList.remove('hidden'); 
+            modal.classList.add('flex'); 
+        }
+    }
+    
+    function closeModal() { 
+        if(modal) {
+            modal.classList.add('hidden'); 
+            modal.classList.remove('flex'); 
+        }
+    }
 
-    const formData = { nombre, whatsapp, sede };
+    window.onclick = function(e) { if (e.target == modal) closeModal(); }
 
-    // 1. Guardamos en tu Google Sheet Leads Web
-    fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        cache: 'no-cache',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-    }).then(() => {
-        // 2. GENERAMOS EL MENSAJE DINÁMICO PARA WHATSAPP
-        [cite_start]const nroDoctora = "51924200094"; // El número de la Dra. Lilyan [cite: 55]
-        const mensaje = `Hola Dra. Lilyan! Soy ${nombre}. Vengo de su web y me gustaría agendar una cita para la sede de ${sede}. Mi WhatsApp es ${whatsapp}.`;
-        const waLink = `https://wa.me/${nroDoctora}?text=${encodeURIComponent(mensaje)}`;
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        btnSubmit.disabled = true;
+        btnText.innerText = "Conectando con la Dra...";
 
-        // Redirigimos a WhatsApp para la demo
-        window.location.href = waLink;
-    }).catch(error => {
-        console.error('Error:', error);
-        window.location.href = "https://calendly.com/franchute10/consulta-ginecologica-surco";
+        const nombre = document.getElementById('nombre').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const sede = document.getElementById('sede').value;
+
+        const formData = { nombre, whatsapp, sede };
+
+        // 1. Guardamos en Google Sheets
+        fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            cache: 'no-cache',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        }).then(() => {
+            // 2. Redirigimos a WhatsApp con tu número para la prueba
+            const nroDoctora = "51XXXXXXXXX"; // PON AQUÍ TU NÚMERO PARA EL TEST
+            const mensaje = `Hola Dra. Lilyan! Soy ${nombre}. Vengo de su web y me gustaría agendar una cita para la sede de ${sede}. Mi WhatsApp es ${whatsapp}.`;
+            const waLink = `https://wa.me/${nroDoctora}?text=${encodeURIComponent(mensaje)}`;
+
+            window.location.href = waLink;
+        }).catch(error => {
+            console.error('Error:', error);
+            // Si falla el guardado, igual mandamos a WhatsApp para no perder el lead
+            window.location.href = "https://wa.me/51XXXXXXXXX"; 
+        });
     });
-});
-    </script>
+</script>
 </body>
 </html>
+
 
 
